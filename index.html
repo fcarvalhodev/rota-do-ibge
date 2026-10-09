@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Rota do IBGE</title>
+<meta name="description" content="Como o IBGE conta o desemprego, explicado de um jeito simples: quem conta como trabalhando, quem conta como desempregado, o que mudou e o que é mentira nas acusações.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<style>
+/* Layout: the Rotas skeleton in the easy-reading format (big type, short sentences, one picture per idea). The IBGE route's own colour is survey navy.
+   Order: question → short answer → how the interview works (decision tree) → 100 people → unemployment over time → what the number does not show → true or false → summary → all the numbers. */
+:root{
+  --bg:#eff1f4; --paper:#fbfbfc; --ink:#1a1d24; --muted:#5a606c; --line:#d3d7de; --soft:#e5e8ed;
+  --accent:#2c4a7e; --accent-soft:#dde5f2;
+  --work:#1baf7a; --seek:#eb6834; --out:#8a8c92;
+  --ok:#1f6b45; --ok-soft:#dcefe3; --no:#a12a2a; --no-soft:#f6dede; --part:#7a5a00; --part-soft:#f6ebc9;
+  --display:"Archivo","Arial Narrow",Impact,sans-serif;
+  --ui:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --text:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111318; --paper:#191c22; --ink:#e9ebef; --muted:#a0a6b2; --line:#2c3039; --soft:#23262e;
+  --accent:#8fb0e6; --accent-soft:#1d2840;
+  --work:#199e70; --seek:#d95926; --out:#6e7077;
+  --ok:#7fd3a3; --ok-soft:#173326; --no:#f19b9b; --no-soft:#3a1c1c; --part:#e8c25a; --part-soft:#3a3016; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111318; --paper:#191c22; --ink:#e9ebef; --muted:#a0a6b2; --line:#2c3039; --soft:#23262e;
+  --accent:#8fb0e6; --accent-soft:#1d2840;
+  --work:#199e70; --seek:#d95926; --out:#6e7077;
+  --ok:#7fd3a3; --ok-soft:#173326; --no:#f19b9b; --no-soft:#3a1c1c; --part:#e8c25a; --part-soft:#3a3016; color-scheme:dark}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--text);font-size:19px;line-height:1.7}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.wrap{max-width:880px;margin:0 auto;padding-inline:16px}
+.kicker,.mono{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.kicker{color:var(--accent)}
+h1{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(46px,11vw,104px);line-height:.9;margin:0;text-transform:uppercase;overflow-wrap:anywhere}
+h2{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:clamp(34px,7vw,52px);line-height:.95;margin:0;text-transform:uppercase;text-wrap:balance}
+h3{font-family:var(--ui);font-weight:700;font-size:22px;line-height:1.2;margin:0;text-wrap:balance}
+p{margin:0}
+header,section{display:grid;grid-template-columns:minmax(0,1fr)}
+header{padding-block:40px 8px;gap:18px}
+section{padding-block:48px 8px;gap:18px}
+.lg{font-size:21px;line-height:1.6}
+.sub{color:var(--muted);max-width:62ch}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:2px 14px;line-height:1.5}
+.src a{color:var(--muted)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px;display:grid;gap:12px;align-content:start}
+.answer-box{background:var(--accent-soft);border:2px solid var(--accent);border-radius:6px;padding:20px;margin-top:40px}
+
+/* interview tree */
+.tree{display:grid;gap:12px}
+.q{background:var(--paper);border:2px solid var(--accent);border-radius:8px;padding:16px 18px;display:grid;gap:6px}
+.q .who{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.q b{font-family:var(--ui);font-size:21px;line-height:1.3}
+.branch{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.ans{border-radius:8px;padding:14px 16px;display:grid;gap:4px;align-content:start}
+.ans .yn{font-family:var(--ui);font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+.ans .res{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:28px;line-height:1;text-transform:uppercase;color:var(--c)}
+.ans p{font-size:16px}
+.ans.box{background:var(--soft);border-left:6px solid var(--c)}
+.arrow{text-align:center;font-family:var(--mono);color:var(--muted);font-size:14px}
+.examples{display:flex;flex-wrap:wrap;gap:6px}
+.examples span{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-family:var(--ui);font-size:14px}
+
+/* 100 people */
+.people{display:grid;grid-template-columns:repeat(20,minmax(0,1fr));gap:4px;max-width:560px}
+.people i{aspect-ratio:1/1.4;border-radius:40% 40% 20% 20%;background:var(--work);display:block}
+.people i.s{background:var(--seek)}
+.leg{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--ui);font-weight:600;font-size:16px}
+.leg i{display:inline-block;width:14px;height:18px;border-radius:40% 40% 20% 20%;background:var(--c);margin-right:6px;vertical-align:-3px}
+
+/* timeline bars */
+.tl{display:grid;gap:10px}
+.tr{display:grid;grid-template-columns:minmax(0,1fr);gap:4px}
+.tr .lab{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-family:var(--ui);font-weight:700;font-size:17px}
+.tr .lab span{font-family:var(--mono);font-weight:500;font-size:13px;color:var(--muted)}
+.tr .t{height:28px;background:var(--soft);border-radius:3px;position:relative}
+.tr .f{position:absolute;inset:0 auto 0 0;background:var(--c);border-radius:3px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;color:var(--paper);font-family:var(--mono);font-weight:600;font-size:14px}
+.era{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+
+/* hidden numbers */
+.three{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.three .card .n{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:56px;line-height:.9;color:var(--accent)}
+.three .card p{font-size:17px}
+.meter{height:18px;background:var(--soft);border-radius:3px;overflow:hidden}
+.meter i{display:block;height:100%;background:var(--accent)}
+
+/* true or false */
+.vf{display:grid;gap:12px}
+.vfi{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:16px 18px;display:grid;gap:8px}
+.vfi p{font-size:18px}
+.badge{justify-self:start;font-family:var(--ui);font-weight:800;font-size:15px;letter-spacing:.04em;text-transform:uppercase;padding:4px 12px;border-radius:999px}
+.badge.f{background:var(--no-soft);color:var(--no);border:2px solid var(--no)}
+.badge.m{background:var(--part-soft);color:var(--part);border:2px solid var(--part)}
+.badge.v{background:var(--ok-soft);color:var(--ok);border:2px solid var(--ok)}
+
+.verdict{background:var(--ink);color:var(--paper);border-radius:6px;padding:22px 20px;display:grid;gap:12px}
+.verdict h2{color:var(--paper)}
+.verdict ul{margin:0;padding-left:20px;display:grid;gap:8px;font-size:20px}
+details.mais{margin-top:44px;border:2px solid var(--line);border-radius:6px;background:var(--paper)}
+details.mais>summary{cursor:pointer;padding:18px 20px;font-family:var(--ui);font-weight:700;font-size:19px;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.mais>summary::after{content:"+";font-family:var(--mono);font-size:24px;line-height:1}
+details.mais[open]>summary::after{content:"−"}
+details.mais>summary::-webkit-details-marker{display:none}
+.mais-body{padding:0 20px 20px;font-size:17px;line-height:1.6;display:grid;gap:14px}
+.mais-body table{width:100%;border-collapse:collapse;font-size:15px}
+.mais-body th,.mais-body td{text-align:left;padding:8px 6px;border-top:1px solid var(--line);vertical-align:top}
+.mais-body th{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.mais-body td:last-child{font-family:var(--mono);white-space:nowrap}
+footer{padding-block:44px 60px;color:var(--muted);font-size:14px;display:grid;gap:8px}
+@media (max-width:520px){.branch{grid-template-columns:minmax(0,1fr)}.people{grid-template-columns:repeat(10,minmax(0,1fr))}}
+</style>
+</head><body>
+
+
+<style>/* barra comum das Rotas */.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><nav class="rotas-bar" aria-label="Rotas"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/">Rotas</a><a href="https://fcarvalhodev.github.io/rota-washington/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/">Fé</a><a href="https://fcarvalhodev.github.io/rota-esplanada/">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/">Itamaraty</a><a href="https://fcarvalhodev.github.io/rota-da-picanha/">Picanha</a><a href="https://fcarvalhodev.github.io/rota-do-ibge/" aria-current="page">IBGE</a></div></nav>
+<header class="wrap">
+  <div class="kicker">Rota do IBGE</div>
+  <h1>O desemprego caiu mesmo?</h1>
+  <p class="lede lg">O IBGE diz que o desemprego está no menor nível já medido. Muita gente não acredita e diz que é truque na conta. Aqui está como o IBGE conta, em palavras simples.</p>
+</header>
+
+<main class="wrap">
+
+<section class="answer-box" aria-labelledby="h-curta">
+  <h2 id="h-curta">A resposta curta</h2>
+  <p class="lg">Sim, caiu. O IBGE conta do <b>mesmo jeito desde 2012</b>, em todos os governos, e segue a regra usada no mundo inteiro. O desemprego começou a cair em 2021, com Bolsonaro, e continuou caindo com Lula.</p>
+</section>
+
+<section aria-labelledby="h-como">
+  <h2 id="h-como">Como o IBGE conta</h2>
+  <p class="sub lg">A cada três meses, entrevistadores do IBGE visitam cerca de <b>210 mil casas</b> em todo o país e fazem as mesmas perguntas para quem mora ali, a partir de 14 anos.</p>
+  <div class="tree">
+    <div class="q"><span class="who">Pergunta 1</span><b>Na semana passada, você trabalhou pelo menos 1 hora ganhando alguma coisa?</b></div>
+    <div class="branch">
+      <div class="ans box" style="--c:var(--work)"><span class="yn">Sim</span><span class="res">Trabalhando</span><p>Com ou sem carteira: empregado, autônomo, bico, motorista de aplicativo.</p></div>
+      <div class="ans" style="--c:var(--muted);border:2px dashed var(--line)"><span class="yn">Não</span><p>Vai para a pergunta 2 ↓</p></div>
+    </div>
+    <div class="q"><span class="who">Pergunta 2</span><b>Nos últimos 30 dias você procurou trabalho, e podia começar?</b></div>
+    <div class="branch">
+      <div class="ans box" style="--c:var(--seek)"><span class="yn">Sim</span><span class="res">Desempregado</span><p>Só entra aqui quem quer trabalhar e está procurando.</p></div>
+      <div class="ans box" style="--c:var(--out)"><span class="yn">Não</span><span class="res">Fora da conta</span><p>Não está trabalhando nem procurando.</p><div class="examples"><span>estudante</span><span>aposentado</span><span>cuida da casa</span><span>desistiu de procurar</span></div></div>
+    </div>
+  </div>
+  <p class="lg">Receber Bolsa Família não muda nada nessa conta. O IBGE nem pergunta isso para decidir. O que vale é se a pessoa trabalhou ou procurou trabalho.</p>
+  <span class="src"><a href="https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html" target="_blank" rel="noopener">IBGE Educa: por dentro do desemprego</a><a href="https://apublica.org/checagem/2018/04/truco-imagem-erra-ao-comparar-desemprego-de-fhc-lula-dilma-e-temer/" target="_blank" rel="noopener">Agência Pública: 210 mil domicílios</a><a href="https://www.aosfatos.org/noticias/falso-ibge-escondeu-desempregados-que-recebem-bolsa-familia/" target="_blank" rel="noopener">Aos Fatos: Bolsa Família</a></span>
+</section>
+
+<section aria-labelledby="h-cem">
+  <h2 id="h-cem">De cada 100 pessoas</h2>
+  <p class="sub lg">De cada 100 pessoas que estão trabalhando ou procurando trabalho, hoje cerca de <b>5 estão desempregadas</b>.</p>
+  <div class="card">
+    <div class="people" id="people" role="img" aria-label="100 bonecos, 95 trabalhando e 5 procurando trabalho"></div>
+    <div class="leg"><span style="--c:var(--work)"><i></i>95 trabalhando</span><span style="--c:var(--seek)"><i></i>5 procurando trabalho</span></div>
+    <p style="font-size:16px;color:var(--muted)">Junho a agosto de 2026: taxa de 5,3%, são 5,8 milhões de pessoas. Quem está fora da conta, como aposentados e estudantes, não entra nesses 100.</p>
+    <span class="src"><a href="https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48148-pnad-continua-taxa-de-desocupacao-e-de-5-3-e-taxa-de-subutilizacao-e-de-13-1-no-trimestre-encerrado-em-agosto" target="_blank" rel="noopener">IBGE: PNAD Contínua, agosto de 2026</a></span>
+  </div>
+</section>
+
+<section aria-labelledby="h-tempo">
+  <h2 id="h-tempo">O desemprego ao longo dos anos</h2>
+  <p class="sub lg">Mesma pesquisa, mesma regra. De cada 100 pessoas que queriam trabalhar, quantas estavam sem emprego:</p>
+  <div class="card tl" id="tl"></div>
+  <p class="lg">O pior momento foi na pandemia, com 14,9%. A queda começou em 2021, com Bolsonaro, e continuou com Lula até o menor número já medido.</p>
+  <span class="src"><a href="https://agenciadenoticias.ibge.gov.br/pt/agencia-sala-de-imprensa/9769-pnad-continua-mostra-desocupacao-de-6-5-no-quarto-trimestre-de-2014-com-media-anual-6-8.html?lang=pt-BR" target="_blank" rel="noopener">IBGE: 2014</a><a href="https://apublica.org/checagem/2018/04/truco-imagem-erra-ao-comparar-desemprego-de-fhc-lula-dilma-e-temer/" target="_blank" rel="noopener">Agência Pública: 2016 e 2017</a><a href="https://www.diariodepernambuco.com.br/amp/economia/2026/01/11706504-desemprego-cai-para-51-em-dezembro-o-menor-ja-registrado.html" target="_blank" rel="noopener">Agência Brasil: pico e 2025</a><a href="https://www.noticiasagricolas.com.br/noticia/342275" target="_blank" rel="noopener">Reuters: 2022</a><a href="https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48148-pnad-continua-taxa-de-desocupacao-e-de-5-3-e-taxa-de-subutilizacao-e-de-13-1-no-trimestre-encerrado-em-agosto" target="_blank" rel="noopener">IBGE: 2026</a></span>
+</section>
+
+<section aria-labelledby="h-nao">
+  <h2 id="h-nao">O que esse número não mostra</h2>
+  <p class="sub lg">Desemprego baixo não quer dizer que todo mundo tem um bom emprego. O IBGE mede isso também, em outros números:</p>
+  <div class="three">
+    <div class="card"><span class="n">37 de 100</span><div class="meter"><i style="width:37.5%"></i></div><h3>trabalham sem carteira ou CNPJ</h3><p>É o trabalho informal. Era 38 de cada 100 um ano antes.</p></div>
+    <div class="card"><span class="n">13 de 100</span><div class="meter"><i style="width:13.1%"></i></div><h3>queriam trabalhar mais</h3><p>Soma quem está desempregado, quem trabalha poucas horas e queria mais, e quem desistiu. Era 14 de cada 100 um ano antes.</p></div>
+    <div class="card"><span class="n">2,4 mi</span><div class="meter"><i style="width:24%"></i></div><h3>desistiram de procurar</h3><p>São os desalentados. Ficam fora da taxa de desemprego, mas o IBGE conta e divulga. Caíram 12% em um ano.</p></div>
+  </div>
+  <p class="lg">Esses números também melhoraram. E a renda média de quem trabalha chegou a R$ 3.777, a maior já medida.</p>
+  <span class="src"><a href="https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48148-pnad-continua-taxa-de-desocupacao-e-de-5-3-e-taxa-de-subutilizacao-e-de-13-1-no-trimestre-encerrado-em-agosto" target="_blank" rel="noopener">IBGE: PNAD Contínua, agosto de 2026</a></span>
+</section>
+
+<section aria-labelledby="h-vf">
+  <h2 id="h-vf">É verdade?</h2>
+  <div class="vf">
+    <div class="vfi"><span class="badge f">Falso</span><p><b>“Quem recebe Bolsa Família conta como empregado.”</b> O IBGE não usa o benefício para decidir nada. Quem recebe e não trabalha, mas procura, conta como desempregado.</p></div>
+    <div class="vfi"><span class="badge v">Verdade</span><p><b>“Quem fez um bico de 1 hora conta como trabalhando.”</b> É a regra da Organização Internacional do Trabalho, usada no mundo todo e pelo IBGE desde 2012, em todos os governos. Por isso o IBGE também divulga quantos queriam trabalhar mais.</p></div>
+    <div class="vfi"><span class="badge v">Verdade</span><p><b>“Quem desistiu de procurar não entra na taxa.”</b> É verdade, mas o IBGE conta essas pessoas à parte, e o número delas também caiu.</p></div>
+    <div class="vfi"><span class="badge f">Falso</span><p><b>“O IBGE mudou a conta para ajudar o Lula.”</b> As regras são as mesmas desde 2012. Em 2025 o IBGE só atualizou o tamanho da população com o Censo de 2022 e refez a conta de todos os anos para trás, inclusive dos governos anteriores.</p></div>
+    <div class="vfi"><span class="badge m">Meia verdade</span><p><b>“A queda é só efeito da nova conta.”</b> Um colunista aponta que a atualização de 2025 ajudou a baixar a taxa naquele trimestre. Mas outros números, como o recorde de pessoas trabalhando e de carteiras assinadas, mostram que o emprego cresceu de verdade.</p></div>
+    <div class="vfi"><span class="badge f">Falso</span><p><b>“O IBGE mente sobre o desemprego.”</b> Bolsonaro disse isso em 2024. Mas a conta é a mesma usada no governo dele, quando o desemprego caiu de 14,9% para 7,9%.</p></div>
+  </div>
+  <span class="src"><a href="https://www.aosfatos.org/noticias/falso-ibge-escondeu-desempregados-que-recebem-bolsa-familia/" target="_blank" rel="noopener">Aos Fatos</a><a href="https://www.poder360.com.br/poder-economia/taxa-de-desemprego-e-mentira-do-ibge-afirma-bolsonaro/" target="_blank" rel="noopener">Poder360: Bolsonaro</a><a href="https://www.poder360.com.br/poder-economia/ibge-atualiza-pesquisa-de-desemprego-com-base-no-censo-2022/" target="_blank" rel="noopener">Poder360: atualização com o Censo</a><a href="https://timesbrasil.com.br/arquivados/alberto-ajzental/desemprego-recua-a-58-mas-a-regua-mudou/" target="_blank" rel="noopener">Times Brasil: “a régua mudou”</a></span>
+</section>
+
+<section aria-labelledby="h-resumo">
+  <div class="verdict">
+    <h2 id="h-resumo">Resumindo</h2>
+    <ul>
+      <li>O IBGE conta o desemprego <b>do mesmo jeito desde 2012</b>, em todos os governos.</li>
+      <li>Bolsa Família <b>não</b> entra na conta.</li>
+      <li>O desemprego caiu de verdade: começou a cair com Bolsonaro e chegou ao menor nível com Lula.</li>
+      <li>Ainda tem muita gente no trabalho informal ou querendo trabalhar mais.</li>
+    </ul>
+  </div>
+</section>
+
+<details class="mais">
+  <summary>Quer ver todos os números? Toque aqui</summary>
+  <div class="mais-body">
+    <h3>PNAD Contínua, junho a agosto de 2026</h3>
+    <table>
+      <tr><th>Indicador</th><th>Valor</th></tr>
+      <tr><td>Taxa de desocupação</td><td>5,3%</td></tr>
+      <tr><td>Pessoas desocupadas</td><td>5,8 milhões</td></tr>
+      <tr><td>Pessoas ocupadas (recorde)</td><td>103,5 milhões</td></tr>
+      <tr><td>Empregados com carteira no setor privado (recorde)</td><td>39,5 milhões</td></tr>
+      <tr><td>Taxa de informalidade</td><td>37,5%</td></tr>
+      <tr><td>Taxa composta de subutilização</td><td>13,1%</td></tr>
+      <tr><td>Desalentados</td><td>2,4 milhões</td></tr>
+      <tr><td>Rendimento médio real habitual</td><td>R$ 3.777</td></tr>
+    </table>
+    <span class="src"><a href="https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48148-pnad-continua-taxa-de-desocupacao-e-de-5-3-e-taxa-de-subutilizacao-e-de-13-1-no-trimestre-encerrado-em-agosto" target="_blank" rel="noopener">IBGE</a></span>
+    <h3>Média de 2025</h3>
+    <p>Taxa média de 5,6%, a menor da série. Informalidade de 38,1%, contra 39% em 2024. Renda média de R$ 3.560, alta de 5,7%. Conta própria chegou a 26,1 milhões, recorde.</p>
+    <span class="src"><a href="https://www.diariodepernambuco.com.br/amp/economia/2026/01/11706504-desemprego-cai-para-51-em-dezembro-o-menor-ja-registrado.html" target="_blank" rel="noopener">Agência Brasil</a></span>
+    <h3>A pesquisa antiga e a nova</h3>
+    <p>Até 2016 o IBGE também tinha a PME, que só olhava seis regiões metropolitanas e dava taxas mais baixas. A PNAD Contínua, de 2012 em diante, cobre o país todo. Por isso não se deve comparar os 4,3% de dezembro de 2014 da PME com os números de hoje. Nesta página só usamos a PNAD Contínua.</p>
+    <span class="src"><a href="https://apublica.org/checagem/2018/04/truco-imagem-erra-ao-comparar-desemprego-de-fhc-lula-dilma-e-temer/" target="_blank" rel="noopener">Agência Pública</a></span>
+    <h3>A atualização de 2025</h3>
+    <p>Em julho de 2025, o IBGE passou a usar a população do Censo de 2022 para pesar as respostas da pesquisa, porque a estimativa antiga tinha cerca de 4 milhões de pessoas a mais. As definições não mudaram, e a série inteira, desde 2012, foi recalculada. Os números do gráfico acima são os divulgados em cada época.</p>
+    <span class="src"><a href="https://www.poder360.com.br/poder-economia/ibge-atualiza-pesquisa-de-desemprego-com-base-no-censo-2022/" target="_blank" rel="noopener">Poder360</a><a href="https://timesbrasil.com.br/arquivados/alberto-ajzental/desemprego-recua-a-58-mas-a-regua-mudou/" target="_blank" rel="noopener">Times Brasil</a></span>
+  </div>
+</details>
+
+<footer>
+  <p>Cada item traz o link do IBGE ou da reportagem de onde saiu. Valores da PNAD Contínua, do IBGE.</p>
+  <p>Atualizado em 9 de outubro de 2026.</p>
+</footer>
+</main>
+
+<script>
+(function(){
+const pp=document.getElementById('people');let h='';for(let i=0;i<100;i++)h+=`<i class="${i>=95?'s':''}"></i>`;pp.innerHTML=h;
+const T=[
+ ["era","Dilma"],
+ ["fim de 2014","Dilma, 1º mandato",6.5],
+ ["mar–mai 2016","Dilma sai do governo",11.2],
+ ["era","Temer"],
+ ["jan–mar 2017","pior momento antes da pandemia",13.7],
+ ["era","Bolsonaro"],
+ ["2020–2021","pandemia, o pico",14.9],
+ ["fim de 2022","fim do governo",7.9],
+ ["era","Lula 3"],
+ ["fim de 2025","menor já medido",5.1],
+ ["jun–ago 2026","mais recente",5.3]
+];
+const max=15;
+document.getElementById('tl').innerHTML=T.map(r=>r[0]==='era'?`<div class="era">${r[1]}</div>`:`<div class="tr"><div class="lab">${r[0]}<span>${r[1]}</span></div><div class="t"><span class="f" style="--c:${r[2]>=10?'var(--seek)':'var(--accent)'};width:${r[2]/max*100}%">${String(r[2]).replace('.',',')}%</span></div></div>`).join('');
+})();
+</script>
+
+</body></html>

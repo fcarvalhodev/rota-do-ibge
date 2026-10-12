@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rota do IBGE em ícones</title>
+<meta name="description" content="Como o IBGE conta o desemprego, em ícones: de cada 100 pessoas, quem conta como desempregado, a taxa em cada governo, informais e quem desistiu de procurar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fcarvalhodev.github.io/rotas/visual/visual.css">
+<style>
+:root{--accent:#2c4a7e;--hero:#233c66}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent:#8fb0e6;--hero:#233c66}}
+:root[data-theme="dark"]{--accent:#8fb0e6;--hero:#233c66}
+.hero{background:var(--hero);border-color:var(--hero)}.hero .go a{color:var(--hero)}
+</style>
+</head><body>
+<style>/* barra comum das Rotas */.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rv-btn{display:inline-flex;align-items:center;gap:8px;justify-self:start;font-family:var(--ui,system-ui);font-weight:800;font-size:16px;letter-spacing:.02em;text-decoration:none;color:var(--paper,#fff);background:var(--accent);padding:10px 16px;border-radius:999px;box-shadow:0 2px 0 rgba(0,0,0,.15)}.rv-btn:hover{filter:brightness(1.08)}.rv-btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><style>/* padrão das Rotas: formato fácil */body{font-size:19px;line-height:1.7}h1{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(46px,11vw,104px);line-height:.9;text-transform:uppercase;overflow-wrap:anywhere}h2{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:clamp(34px,7vw,52px);line-height:.95;text-transform:uppercase}</style><nav class="rotas-bar" aria-label="Rotas"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/">Rotas</a><a href="https://fcarvalhodev.github.io/rota-washington/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/">Fé</a><a href="https://fcarvalhodev.github.io/rota-esplanada/">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/">Itamaraty</a><a href="https://fcarvalhodev.github.io/rota-da-picanha/">Picanha</a><a href="https://fcarvalhodev.github.io/rota-do-ibge/" aria-current="page">IBGE</a><a href="https://fcarvalhodev.github.io/rota-velho-chico/">Velho Chico</a><a href="https://fcarvalhodev.github.io/rota-do-tesouro/">Tesouro</a><a href="https://fcarvalhodev.github.io/rota-rouanet/">Rouanet</a><a href="https://fcarvalhodev.github.io/rota-dos-ventos/">Ventos</a></div></nav>
+
+
+<main class="rv" id="rv" aria-label="Rota do IBGE em ícones"></main>
+<script>
+window.RV_DATA={
+ kicker:"Rota do IBGE · em ícones",
+ title:"O desemprego caiu mesmo?",
+ answer:"<b>Sim, caiu.</b> O IBGE conta do mesmo jeito desde 2012, em todos os governos. A queda começou em 2021, com Bolsonaro, e <b>continuou</b> com Lula.",
+ heroIcons:["iso-pessoa","iso-trabalhador","iso-casa","iso-lupa","iso-pessoa","iso-doc","iso-relogio","iso-pessoa","iso-familia","iso-maleta"],
+ full:"index.html",
+ updated:"Dados até agosto de 2026 · atualizado em 12 de outubro de 2026 · ícones próprios e Tabler Icons (MIT)",
+ cards:[
+  {type:"hero",span:"s4",rows:2},
+  {type:"isogrid",span:"s8",label:"De cada 100 pessoas que trabalham ou procuram trabalho",title:"Hoje, cerca de 5 estão desempregadas",size:30,
+   groups:[
+    {name:"Trabalhando",icon:"iso-pessoa",n:95,value:"95",color:"var(--accent)"},
+    {name:"Procurando trabalho",icon:"iso-pessoa",n:5,value:"5 · taxa de 5,3%",color:"var(--b)"}],
+   key:{icon:"iso-pessoa",text:"1 de cada 100 pessoas"},
+   text:"Junho a agosto de 2026: 5,8 milhões de pessoas procurando trabalho.",
+   src:[["IBGE: PNAD Contínua, agosto de 2026","https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48148-pnad-continua-taxa-de-desocupacao-e-de-5-3-e-taxa-de-subutilizacao-e-de-13-1-no-trimestre-encerrado-em-agosto"]]},
+  {type:"flow",span:"s8",label:"Como o IBGE conta",title:"Duas perguntas decidem",
+   steps:[
+    {icon:"iso-casa",name:"210 mil casas visitadas",sub:"a cada três meses"},
+    {icon:"iso-relogio",name:"Trabalhou 1 hora na semana?",sub:"sim: trabalhando, com ou sem carteira"},
+    {icon:"iso-lupa",name:"Se não: procurou trabalho e podia começar?",sub:"sim: desempregado",hot:true},
+    {icon:"iso-livro",name:"Não procurou",sub:"fora da conta: estudante, aposentado, quem desistiu"}],
+   text:"Receber Bolsa Família não muda nada nessa conta.",
+   src:[["IBGE Educa: por dentro do desemprego","https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"],["Agência Pública: 210 mil domicílios","https://apublica.org/checagem/2018/04/truco-imagem-erra-ao-comparar-desemprego-de-fhc-lula-dilma-e-temer/"],["Aos Fatos: Bolsa Família","https://www.aosfatos.org/noticias/falso-ibge-escondeu-desempregados-que-recebem-bolsa-familia/"]]},
+  {type:"iso",span:"s12",label:"Desempregados de cada 100 pessoas na força de trabalho",title:"Subiu até a pandemia e caiu desde 2021",size:28,
+   rows:[
+    {head:"Dilma"},{name:"fim de 2014",icon:"iso-pessoa",n:6.6,value:"6,6%"},{name:"mar. a mai. 2016, Dilma sai",icon:"iso-pessoa",n:11.3,value:"11,3%"},
+    {head:"Temer"},{name:"jan. a mar. 2017",icon:"iso-pessoa",n:13.9,value:"13,9%"},
+    {head:"Bolsonaro"},{name:"pandemia, pico da série",icon:"iso-pessoa",n:14.9,value:"14,9%",color:"var(--b)"},{name:"fim de 2022",icon:"iso-pessoa",n:7.9,value:"7,9%"},
+    {head:"Lula 3"},{name:"fim de 2025, menor já medido",icon:"iso-pessoa",n:5.1,value:"5,1%"},{name:"jun. a ago. 2026",icon:"iso-pessoa",n:5.3,value:"5,3%"}],
+   key:{icon:"iso-pessoa",text:"1 de cada 100 pessoas"},
+   text:"Mesma pesquisa e mesma conta em todos os pontos. O pico foi em jul. a set. 2020 e de novo em jan. a mar. 2021.",
+   src:[["IBGE/SIDRA: tabela 6381","https://sidra.ibge.gov.br/tabela/6381"],["IBGE: 2014","https://agenciadenoticias.ibge.gov.br/pt/agencia-sala-de-imprensa/9769-pnad-continua-mostra-desocupacao-de-6-5-no-quarto-trimestre-de-2014-com-media-anual-6-8.html?lang=pt-BR"],["Agência Pública: 2016 e 2017","https://apublica.org/checagem/2018/04/truco-imagem-erra-ao-comparar-desemprego-de-fhc-lula-dilma-e-temer/"],["Agência Brasil: pico e 2025","https://www.diariodepernambuco.com.br/amp/economia/2026/01/11706504-desemprego-cai-para-51-em-dezembro-o-menor-ja-registrado.html"],["Reuters: 2022","https://www.noticiasagricolas.com.br/noticia/342275"],["IBGE: 2026","https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48148-pnad-continua-taxa-de-desocupacao-e-de-5-3-e-taxa-de-subutilizacao-e-de-13-1-no-trimestre-encerrado-em-agosto"]]},
+  {type:"iso",span:"s6",label:"O que a taxa não mostra · de cada 100",title:"Muita gente sem carteira",size:22,
+   rows:[
+    {head:"Sem carteira ou CNPJ (informais)"},
+    {name:"um ano antes",icon:"iso-pessoa",n:38,value:"38",color:"var(--d)"},
+    {name:"jun. a ago. 2026",icon:"iso-pessoa",n:37.5,value:"37,5",color:"var(--b)"},
+    {head:"Subutilizados"},
+    {name:"um ano antes",icon:"iso-pessoa",n:14,value:"14",color:"var(--d)"},
+    {name:"jun. a ago. 2026",icon:"iso-pessoa",n:13.1,value:"13,1",color:"var(--b)"}],
+   key:{icon:"iso-pessoa",text:"1 de cada 100 pessoas"},
+   text:"Subutilizados: desempregados, quem queria trabalhar mais horas e quem podia trabalhar. A conta usa um total maior.",
+   src:[["IBGE: PNAD Contínua, agosto de 2026","https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48148-pnad-continua-taxa-de-desocupacao-e-de-5-3-e-taxa-de-subutilizacao-e-de-13-1-no-trimestre-encerrado-em-agosto"]]},
+  {type:"iso",span:"s6",label:"Em milhões de pessoas · jun. a ago. 2026",title:"Recorde de gente trabalhando",size:22,
+   rows:[
+    {name:"Trabalhando (recorde)",icon:"iso-trabalhador",n:51.75,value:"103,5 mi",color:"var(--accent)"},
+    {name:"Com carteira, setor privado (recorde)",icon:"iso-trabalhador",n:19.75,value:"39,5 mi",color:"var(--accent)"},
+    {name:"Procurando trabalho",icon:"iso-trabalhador",n:2.9,value:"5,8 mi",color:"var(--b)"},
+    {name:"Desistiram de procurar",icon:"iso-trabalhador",n:1.2,value:"2,4 mi",color:"var(--d)"}],
+   key:{icon:"iso-trabalhador",text:"2 milhões de pessoas"},
+   text:"Quem desistiu fica fora da taxa, mas o IBGE conta e divulga. Caíram 12% em um ano.",
+   src:[["IBGE: PNAD Contínua, agosto de 2026","https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48148-pnad-continua-taxa-de-desocupacao-e-de-5-3-e-taxa-de-subutilizacao-e-de-13-1-no-trimestre-encerrado-em-agosto"]]},
+  {type:"scale",span:"s6",label:"O IBGE mudou a conta?",title:"As regras são as mesmas desde 2012",tilt:-6,
+   left:{icon:"iso-doc",title:"Não mudou",text:"As perguntas e as regras, iguais em todos os governos e no mundo inteiro."},
+   right:{icon:"iso-familia",title:"Mudou em 2025",text:"O tamanho da população, pelo Censo de 2022. A série toda, desde 2012, foi refeita."},
+   src:[["Poder360: atualização com o Censo","https://www.poder360.com.br/poder-economia/ibge-atualiza-pesquisa-de-desemprego-com-base-no-censo-2022/"],["IBGE: reponderação em 2025","https://www.ibge.gov.br/comunicados/44067-pnad-continua-reponderacao-em-2025"]]},
+  {type:"iso",span:"s6",label:"Renda média de quem trabalha",title:"A maior já medida",size:22,
+   rows:[
+    {name:"Média de 2025",icon:"iso-cedula-real",n:35.6,value:"R$ 3.560",color:"var(--d)"},
+    {name:"jun. a ago. 2026",icon:"iso-cedula-real",n:37.77,value:"R$ 3.777",color:"var(--accent)"}],
+   key:{icon:"iso-cedula-real",text:"R$ 100"},
+   src:[["Agência Brasil: média de 2025","https://www.diariodepernambuco.com.br/amp/economia/2026/01/11706504-desemprego-cai-para-51-em-dezembro-o-menor-ja-registrado.html"],["IBGE: PNAD Contínua, agosto de 2026","https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48148-pnad-continua-taxa-de-desocupacao-e-de-5-3-e-taxa-de-subutilizacao-e-de-13-1-no-trimestre-encerrado-em-agosto"]]},
+  {type:"verdicts",span:"s12",label:"É verdade?",
+   items:[["f","“Quem recebe Bolsa Família conta como empregado.”"],["v","“Quem fez um bico de 1 hora conta como trabalhando.”"],["v","“Quem desistiu de procurar não entra na taxa.”"],["f","“O IBGE mudou a conta para ajudar o Lula.”"],["m","“A queda é só efeito da nova conta.”"],["f","“O IBGE mente sobre o desemprego.”"]]}
+ ]};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://fcarvalhodev.github.io/rotas/visual/icons.js"></script>
+<script src="https://fcarvalhodev.github.io/rotas/visual/visual.js"></script>
+</body></html>

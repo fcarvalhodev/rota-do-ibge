@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>IBGE Route in icons</title>
+<meta name="description" content="How IBGE counts unemployment, in icons: out of every 100 people, who counts as unemployed, the rate under each government, informal workers and those who gave up looking.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fcarvalhodev.github.io/rotas/visual/visual.css">
+<style>
+:root{--accent:#2c4a7e;--hero:#233c66}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent:#8fb0e6;--hero:#233c66}}
+:root[data-theme="dark"]{--accent:#8fb0e6;--hero:#233c66}
+.hero{background:var(--hero);border-color:var(--hero)}.hero .go a{color:var(--hero)}
+</style>
+</head><body>
+<style>/* barra comum das Rotas */.rotas-bar .rb-lang{margin-left:auto;color:var(--accent);font-weight:600}.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rv-btn{display:inline-flex;align-items:center;gap:8px;justify-self:start;font-family:var(--ui,system-ui);font-weight:800;font-size:16px;letter-spacing:.02em;text-decoration:none;color:var(--paper,#fff);background:var(--accent);padding:10px 16px;border-radius:999px;box-shadow:0 2px 0 rgba(0,0,0,.15)}.rv-btn:hover{filter:brightness(1.08)}.rv-btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><style>/* padrão das Rotas: formato fácil */body{font-size:19px;line-height:1.7}h1{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(46px,11vw,104px);line-height:.9;text-transform:uppercase;overflow-wrap:anywhere}h2{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:clamp(34px,7vw,52px);line-height:.95;text-transform:uppercase}</style><nav class="rotas-bar" aria-label="Routes"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/en/">Routes</a><a href="https://fcarvalhodev.github.io/rota-washington/en/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/en/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/en/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/en/">Faith</a><a href="https://fcarvalhodev.github.io/rota-esplanada/en/">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/en/">Itamaraty</a><a href="https://fcarvalhodev.github.io/rota-da-picanha/en/">Picanha</a><a href="https://fcarvalhodev.github.io/rota-do-ibge/en/" aria-current="page">IBGE</a><a href="https://fcarvalhodev.github.io/rota-velho-chico/en/">Velho Chico</a><a href="https://fcarvalhodev.github.io/rota-do-tesouro/en/">Treasury</a><a href="https://fcarvalhodev.github.io/rota-rouanet/en/">Rouanet</a><a href="https://fcarvalhodev.github.io/rota-dos-ventos/en/">Winds</a><a href="https://fcarvalhodev.github.io/rota-do-algoritmo/en/">Algorithm</a><a class="rb-lang" href="../visual.html" hreflang="pt-BR" lang="pt-BR">PT</a></div></nav>
+
+
+<main class="rv" id="rv" aria-label="IBGE Route in icons"></main>
+<script>
+window.RV_DATA={lang:"en",
+ kicker:"IBGE Route · in icons",
+ title:"Did unemployment really fall?",
+ answer:"<b>Yes, it fell.</b> IBGE has counted the same way since 2012, under every government. The fall began in 2021, under Bolsonaro, and <b>continued</b> under Lula.",
+ heroIcons:["iso-pessoa","iso-trabalhador","iso-casa","iso-lupa","iso-pessoa","iso-doc","iso-relogio","iso-pessoa","iso-familia","iso-maleta"],
+ full:"index.html",
+ updated:"Data through August 2026 · updated October 12, 2026 · original icons and Tabler Icons (MIT)",
+ cards:[
+  {type:"hero",span:"s4",rows:2},
+  {type:"isogrid",span:"s8",label:"Out of every 100 people who work or look for work",title:"Today, about 5 are unemployed",size:30,
+   groups:[
+    {name:"Working",icon:"iso-pessoa",n:95,value:"95",color:"var(--accent)"},
+    {name:"Looking for work",icon:"iso-pessoa",n:5,value:"5 · a rate of 5.3%",color:"var(--b)"}],
+   key:{icon:"iso-pessoa",text:"1 out of every 100 people"},
+   text:"June to August 2026: 5.8 million people looking for work.",
+   src:[["IBGE: PNAD Contínua, August 2026","https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48148-pnad-continua-taxa-de-desocupacao-e-de-5-3-e-taxa-de-subutilizacao-e-de-13-1-no-trimestre-encerrado-em-agosto"]]},
+  {type:"flow",span:"s8",label:"How IBGE counts",title:"Two questions decide",
+   steps:[
+    {icon:"iso-casa",name:"210,000 homes visited",sub:"every three months"},
+    {icon:"iso-relogio",name:"Worked 1 hour in the week?",sub:"yes: working, with or without a formal contract"},
+    {icon:"iso-lupa",name:"If not: looked for work and could start?",sub:"sim: desempregado",hot:true},
+    {icon:"iso-livro",name:"Did not look",sub:"outside the count: students, retirees, those who gave up"}],
+   text:"Receiving Bolsa Família changes nothing in this count.",
+   src:[["IBGE Educa: inside unemployment","https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"],["Agência Pública: 210,000 households","https://apublica.org/checagem/2018/04/truco-imagem-erra-ao-comparar-desemprego-de-fhc-lula-dilma-e-temer/"],["Aos Fatos: Bolsa Família","https://www.aosfatos.org/noticias/falso-ibge-escondeu-desempregados-que-recebem-bolsa-familia/"]]},
+  {type:"iso",span:"s12",label:"Unemployed out of every 100 people in the labor force",title:"It rose until the pandemic and has fallen since 2021",size:28,
+   rows:[
+    {head:"Dilma"},{name:"end of 2014",icon:"iso-pessoa",n:6.6,value:"6.6%"},{name:"Mar to May 2016, Dilma leaves",icon:"iso-pessoa",n:11.3,value:"11.3%"},
+    {head:"Temer"},{name:"Jan to Mar 2017",icon:"iso-pessoa",n:13.9,value:"13.9%"},
+    {head:"Bolsonaro"},{name:"pandemic, peak of the series",icon:"iso-pessoa",n:14.9,value:"14.9%",color:"var(--b)"},{name:"end of 2022",icon:"iso-pessoa",n:7.9,value:"7.9%"},
+    {head:"Lula 3"},{name:"end of 2025, lowest ever measured",icon:"iso-pessoa",n:5.1,value:"5.1%"},{name:"Jun to Aug 2026",icon:"iso-pessoa",n:5.3,value:"5.3%"}],
+   key:{icon:"iso-pessoa",text:"1 out of every 100 people"},
+   text:"Same survey and same method at every point. The peak was in Jul to Sep 2020 and again in Jan to Mar 2021.",
+   src:[["IBGE/SIDRA: table 6381","https://sidra.ibge.gov.br/tabela/6381"],["IBGE: 2014","https://agenciadenoticias.ibge.gov.br/pt/agencia-sala-de-imprensa/9769-pnad-continua-mostra-desocupacao-de-6-5-no-quarto-trimestre-de-2014-com-media-anual-6-8.html?lang=pt-BR"],["Agência Pública: 2016 and 2017","https://apublica.org/checagem/2018/04/truco-imagem-erra-ao-comparar-desemprego-de-fhc-lula-dilma-e-temer/"],["Agência Brasil: peak and 2025","https://www.diariodepernambuco.com.br/amp/economia/2026/01/11706504-desemprego-cai-para-51-em-dezembro-o-menor-ja-registrado.html"],["Reuters: 2022","https://www.noticiasagricolas.com.br/noticia/342275"],["IBGE: 2026","https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48148-pnad-continua-taxa-de-desocupacao-e-de-5-3-e-taxa-de-subutilizacao-e-de-13-1-no-trimestre-encerrado-em-agosto"]]},
+  {type:"iso",span:"s6",label:"What the rate does not show · out of every 100",title:"Many people without a formal contract",size:22,
+   rows:[
+    {head:"Without a contract or business registration (informal)"},
+    {name:"a year earlier",icon:"iso-pessoa",n:38,value:"38",color:"var(--d)"},
+    {name:"Jun to Aug 2026",icon:"iso-pessoa",n:37.5,value:"37.5",color:"var(--b)"},
+    {head:"Underutilized"},
+    {name:"a year earlier",icon:"iso-pessoa",n:14,value:"14",color:"var(--d)"},
+    {name:"Jun to Aug 2026",icon:"iso-pessoa",n:13.1,value:"13.1",color:"var(--b)"}],
+   key:{icon:"iso-pessoa",text:"1 out of every 100 people"},
+   text:"Underutilized: the unemployed, those who wanted to work more hours and those who could work. The calculation uses a larger total.",
+   src:[["IBGE: PNAD Contínua, August 2026","https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48148-pnad-continua-taxa-de-desocupacao-e-de-5-3-e-taxa-de-subutilizacao-e-de-13-1-no-trimestre-encerrado-em-agosto"]]},
+  {type:"iso",span:"s6",label:"In millions of people · Jun to Aug 2026",title:"A record number of people working",size:22,
+   rows:[
+    {name:"Working (record)",icon:"iso-trabalhador",n:51.75,value:"103.5 M",color:"var(--accent)"},
+    {name:"Formal, private sector (record)",icon:"iso-trabalhador",n:19.75,value:"39.5 M",color:"var(--accent)"},
+    {name:"Looking for work",icon:"iso-trabalhador",n:2.9,value:"5.8 M",color:"var(--b)"},
+    {name:"Gave up looking",icon:"iso-trabalhador",n:1.2,value:"2.4 M",color:"var(--d)"}],
+   key:{icon:"iso-trabalhador",text:"2 million people"},
+   text:"Those who gave up are outside the rate, but IBGE counts and publishes them. They fell 12% in a year.",
+   src:[["IBGE: PNAD Contínua, August 2026","https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48148-pnad-continua-taxa-de-desocupacao-e-de-5-3-e-taxa-de-subutilizacao-e-de-13-1-no-trimestre-encerrado-em-agosto"]]},
+  {type:"scale",span:"s6",label:"Did IBGE change the formula?",title:"The rules have been the same since 2012",tilt:-6,
+   left:{icon:"iso-doc",title:"Did not change",text:"The questions and the rules, the same under every government and worldwide."},
+   right:{icon:"iso-familia",title:"Changed in 2025",text:"The population size, from the 2022 Census. The whole series, since 2012, was redone."},
+   src:[["Poder360: Census update","https://www.poder360.com.br/poder-economia/ibge-atualiza-pesquisa-de-desemprego-com-base-no-censo-2022/"],["IBGE: 2025 reweighting","https://www.ibge.gov.br/comunicados/44067-pnad-continua-reponderacao-em-2025"]]},
+  {type:"iso",span:"s6",label:"Average income of people who work",title:"The highest ever measured",size:22,
+   rows:[
+    {name:"2025 average",icon:"iso-cedula-real",n:35.6,value:"R$ 3,560",color:"var(--d)"},
+    {name:"Jun to Aug 2026",icon:"iso-cedula-real",n:37.77,value:"R$ 3,777",color:"var(--accent)"}],
+   key:{icon:"iso-cedula-real",text:"R$ 100"},
+   src:[["Agência Brasil: 2025 average","https://www.diariodepernambuco.com.br/amp/economia/2026/01/11706504-desemprego-cai-para-51-em-dezembro-o-menor-ja-registrado.html"],["IBGE: PNAD Contínua, August 2026","https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/48148-pnad-continua-taxa-de-desocupacao-e-de-5-3-e-taxa-de-subutilizacao-e-de-13-1-no-trimestre-encerrado-em-agosto"]]},
+  {type:"verdicts",span:"s12",label:"Is it true?",
+   items:[["f","“People who receive Bolsa Família count as employed.”"],["v","“Someone who did a 1-hour odd job counts as working.”"],["v","“People who gave up looking are not in the rate.”"],["f","“IBGE changed the formula to help Lula.”"],["m","“The drop is only an effect of the new calculation.”"],["f","“IBGE lies about unemployment.”"]]}
+ ]};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://fcarvalhodev.github.io/rotas/visual/icons.js"></script>
+<script src="https://fcarvalhodev.github.io/rotas/visual/visual.js"></script>
+</body></html>

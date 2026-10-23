@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Entrevistador por um Dia</title>
+<meta name="description" content="Você bate na porta com a prancheta do IBGE. Cada morador conta a sua semana. Classifique como manda a regra, que é a mesma desde 2012. Depois, confira os boatos sobre o desemprego.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fcarvalhodev.github.io/rotas/jogos/jogo.css">
+<style>
+:root{--accent:#2c4a7e;--hero:#233c66}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent:#8fb0e6;--hero:#233c66}}
+:root[data-theme="dark"]{--accent:#8fb0e6;--hero:#233c66}
+.hero{background:var(--hero);border-color:var(--hero)}.hero .go a{color:var(--hero)}
+</style>
+</head><body>
+<style>/* barra comum das Rotas */.rotas-bar .rb-lang{margin-left:auto;color:var(--accent);font-weight:600}.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rv-btn{display:inline-flex;align-items:center;gap:8px;justify-self:start;font-family:var(--ui,system-ui);font-weight:800;font-size:16px;letter-spacing:.02em;text-decoration:none;color:var(--paper,#fff);background:var(--accent);padding:10px 16px;border-radius:999px;box-shadow:0 2px 0 rgba(0,0,0,.15)}.rv-btn:hover{filter:brightness(1.08)}.rv-btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><nav class="rotas-bar" aria-label="Rotas"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/">Rotas</a><a href="https://fcarvalhodev.github.io/rota-washington/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/">Fé</a><a href="https://fcarvalhodev.github.io/rota-esplanada/">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/">Itamaraty</a><a href="https://fcarvalhodev.github.io/rota-da-picanha/">Picanha</a><a href="https://fcarvalhodev.github.io/rota-do-ibge/" aria-current="page">IBGE</a><a href="https://fcarvalhodev.github.io/rota-velho-chico/">Velho Chico</a><a href="https://fcarvalhodev.github.io/rota-do-tesouro/">Tesouro</a><a href="https://fcarvalhodev.github.io/rota-rouanet/">Rouanet</a><a href="https://fcarvalhodev.github.io/rota-dos-ventos/">Ventos</a><a href="https://fcarvalhodev.github.io/rota-do-algoritmo/">Algoritmo</a><a href="https://fcarvalhodev.github.io/rota-do-posto/">Posto</a><a href="https://fcarvalhodev.github.io/rota-das-queimadas/">Queimadas</a><a href="https://fcarvalhodev.github.io/rota-dos-games/">Games</a><a href="https://fcarvalhodev.github.io/rota-do-contracheque/">Contracheque</a><a href="https://fcarvalhodev.github.io/rota-palantir/">Palantir</a><a class="rb-lang" href="en/jogo.html" hreflang="en" lang="en">EN</a></div></nav>
+<main class="jg" id="jg" aria-live="polite"><noscript>Este jogo precisa de JavaScript. <a href="index.html">Ler a rota</a>.</noscript></main>
+<script>
+window.JG_DATA={
+ "kicker": "Rota do IBGE · jogo",
+ "title": "Entrevistador por um Dia",
+ "host": [
+  "📋",
+  "Entrevistador da PNAD"
+ ],
+ "emo": "🏠",
+ "intro": "Você bate na porta com a prancheta do IBGE. Cada morador conta a sua semana. Classifique como manda a regra, que é a mesma desde 2012. Depois, confira os boatos sobre o desemprego.",
+ "rounds": [
+  {
+   "type": "escolha",
+   "title": "Batendo de porta em porta",
+   "how": "classifique cada pessoa como trabalhando, desempregada ou fora da força de trabalho.",
+   "n": 6,
+   "items": [
+    {
+     "q": "Seu Zé, 52 anos, fez bico de pedreiro em duas tardes da semana.",
+     "o": [
+      "Trabalhando",
+      "Desempregado",
+      "Fora da força de trabalho"
+     ],
+     "a": 0,
+     "e": "Trabalhou pelo menos 1 hora por dinheiro: conta como trabalhando, com ou sem carteira.",
+     "s": [
+      [
+       "IBGE Educa: por dentro do desemprego",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "Ana, 23 anos, estudante, mandou currículos este mês e pode começar amanhã.",
+     "o": [
+      "Trabalhando",
+      "Desempregado",
+      "Fora da força de trabalho"
+     ],
+     "a": 1,
+     "e": "Procurou trabalho nos últimos 30 dias e podia começar: é desempregada, mesmo sendo estudante.",
+     "s": [
+      [
+       "IBGE Educa: por dentro do desemprego",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "Dona Lúcia, 68 anos, aposentada, não trabalha nem procura emprego.",
+     "o": [
+      "Trabalhando",
+      "Desempregado",
+      "Fora da força de trabalho"
+     ],
+     "a": 2,
+     "e": "Não trabalhou nem procurou: fica fora da força de trabalho, e não entra na taxa de desemprego.",
+     "s": [
+      [
+       "IBGE Educa: por dentro do desemprego",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "Carlos, motorista de aplicativo, rodou só 3 horas na semana.",
+     "o": [
+      "Trabalhando",
+      "Desempregado",
+      "Fora da força de trabalho"
+     ],
+     "a": 0,
+     "e": "Uma hora já basta. Bico e aplicativo contam como trabalho.",
+     "s": [
+      [
+       "IBGE Educa: por dentro do desemprego",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "Bia recebe Bolsa Família e passou a semana procurando emprego. Pode começar já.",
+     "o": [
+      "Trabalhando",
+      "Desempregado",
+      "Fora da força de trabalho"
+     ],
+     "a": 1,
+     "e": "Receber Bolsa Família não muda nada: ela procurou e está disponível, então é desempregada.",
+     "s": [
+      [
+       "IBGE Educa: por dentro do desemprego",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "Rafael desistiu de procurar emprego há três meses.",
+     "o": [
+      "Trabalhando",
+      "Desempregado",
+      "Fora da força de trabalho"
+     ],
+     "a": 2,
+     "e": "Quem desistiu de procurar fica fora da força de trabalho. O IBGE mede esse grupo à parte, como desalentado.",
+     "s": [
+      [
+       "IBGE Educa: por dentro do desemprego",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "Marta ajudou 2 horas na barraca de pastel da família, sem receber.",
+     "o": [
+      "Trabalhando",
+      "Desempregado",
+      "Fora da força de trabalho"
+     ],
+     "a": 0,
+     "e": "Ajudar um familiar no trabalho também conta, mesmo sem salário.",
+     "s": [
+      [
+       "IBGE Educa: por dentro do desemprego",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "João está afastado do emprego com carteira por licença médica.",
+     "o": [
+      "Trabalhando",
+      "Desempregado",
+      "Fora da força de trabalho"
+     ],
+     "a": 0,
+     "e": "Quem está temporariamente afastado de um trabalho conta como trabalhando.",
+     "s": [
+      [
+       "IBGE Educa: por dentro do desemprego",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "Pedro, 30 anos, cuida dos filhos em casa e não está procurando emprego.",
+     "o": [
+      "Trabalhando",
+      "Desempregado",
+      "Fora da força de trabalho"
+     ],
+     "a": 2,
+     "e": "Não trabalhou por renda nem procurou: fora da força de trabalho.",
+     "s": [
+      [
+       "IBGE Educa: por dentro do desemprego",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "boato",
+   "title": "Boatos sobre o desemprego",
+   "how": "leia a frase que circula e diga se é Verdade, Meia verdade, Falso ou Sem prova.",
+   "n": 4,
+   "items": [
+    {
+     "c": "Quem recebe Bolsa Família conta como empregado.",
+     "v": "f",
+     "e": "O IBGE não usa o benefício para decidir nada. Quem recebe e não trabalha, mas procura, conta como desempregado.",
+     "s": []
+    },
+    {
+     "c": "Quem fez um bico de 1 hora conta como trabalhando.",
+     "v": "v",
+     "e": "É a regra da Organização Internacional do Trabalho, usada no mundo todo e pelo IBGE desde 2012, em todos os governos. Por isso o IBGE também divulga quantos queriam trabalhar mais.",
+     "s": []
+    },
+    {
+     "c": "Quem desistiu de procurar não entra na taxa.",
+     "v": "v",
+     "e": "É verdade, mas o IBGE conta essas pessoas à parte, e o número delas também caiu.",
+     "s": []
+    },
+    {
+     "c": "O IBGE mudou a conta para ajudar o Lula.",
+     "v": "f",
+     "e": "As regras são as mesmas desde 2012. Em 2025 o IBGE só atualizou o tamanho da população com o Censo de 2022 e refez a conta de todos os anos para trás, inclusive dos governos anteriores.",
+     "s": []
+    },
+    {
+     "c": "A queda é só efeito da nova conta.",
+     "v": "m",
+     "e": "Um colunista aponta que a atualização de 2025 ajudou a baixar a taxa naquele trimestre. Mas outros números, como o recorde de pessoas trabalhando e de carteiras assinadas, mostram que o emprego cresceu de verdade.",
+     "s": []
+    },
+    {
+     "c": "O IBGE mente sobre o desemprego.",
+     "v": "f",
+     "e": "Bolsonaro disse isso em 2024. Mas a conta é a mesma usada no governo dele, quando o desemprego caiu de 14,9% para 7,9%.",
+     "s": []
+    }
+   ]
+  }
+ ],
+ "ranks": [
+  [
+   0,
+   "Prancheta perdida no ônibus."
+  ],
+  [
+   40,
+   "Entrevistador em treinamento."
+  ],
+  [
+   65,
+   "Entrevistador de carreira."
+  ],
+  [
+   90,
+   "Metodologia internacional na veia."
+  ]
+ ],
+ "quips": {
+  "ok": [
+   "Isso! Pode publicar.",
+   "Na mosca. A fonte agradece.",
+   "Acertou. O grupo da família vai ter que engolir.",
+   "Boa! Checador raiz."
+  ],
+  "no": [
+   "Errou. Mas pelo menos você não compartilhou.",
+   "Quase. Leia a explicação antes de mandar no zap.",
+   "Não foi dessa vez. Acontece até com jornalista.",
+   "Ops. A tia do zap venceu essa."
+  ]
+ },
+ "full": "index.html",
+ "updated": "Rotas · Rota do IBGE"
+};
+</script>
+<script src="https://fcarvalhodev.github.io/rotas/jogos/jogo.js"></script>
+</body></html>

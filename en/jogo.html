@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Interviewer for a Day</title>
+<meta name="description" content="You knock on the door with the IBGE clipboard. Each resident tells you about their week. Classify them by the rule, the same since 2012. Then check the rumours about unemployment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fcarvalhodev.github.io/rotas/jogos/jogo.css">
+<style>
+:root{--accent:#2c4a7e;--hero:#233c66}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent:#8fb0e6;--hero:#233c66}}
+:root[data-theme="dark"]{--accent:#8fb0e6;--hero:#233c66}
+.hero{background:var(--hero);border-color:var(--hero)}.hero .go a{color:var(--hero)}
+</style>
+</head><body>
+<style>/* barra comum das Rotas */.rotas-bar .rb-lang{margin-left:auto;color:var(--accent);font-weight:600}.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rv-btn{display:inline-flex;align-items:center;gap:8px;justify-self:start;font-family:var(--ui,system-ui);font-weight:800;font-size:16px;letter-spacing:.02em;text-decoration:none;color:var(--paper,#fff);background:var(--accent);padding:10px 16px;border-radius:999px;box-shadow:0 2px 0 rgba(0,0,0,.15)}.rv-btn:hover{filter:brightness(1.08)}.rv-btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><nav class="rotas-bar" aria-label="Routes"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/en/">Routes</a><a href="https://fcarvalhodev.github.io/rota-washington/en/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/en/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/en/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/en/">Faith</a><a href="https://fcarvalhodev.github.io/rota-esplanada/en/">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/en/">Itamaraty</a><a href="https://fcarvalhodev.github.io/rota-da-picanha/en/">Picanha</a><a href="https://fcarvalhodev.github.io/rota-do-ibge/en/" aria-current="page">IBGE</a><a href="https://fcarvalhodev.github.io/rota-velho-chico/en/">Velho Chico</a><a href="https://fcarvalhodev.github.io/rota-do-tesouro/en/">Treasury</a><a href="https://fcarvalhodev.github.io/rota-rouanet/en/">Rouanet</a><a href="https://fcarvalhodev.github.io/rota-dos-ventos/en/">Winds</a><a href="https://fcarvalhodev.github.io/rota-do-algoritmo/en/">Algorithm</a><a href="https://fcarvalhodev.github.io/rota-do-posto/en/">Pump</a><a href="https://fcarvalhodev.github.io/rota-das-queimadas/en/">Fires</a><a href="https://fcarvalhodev.github.io/rota-dos-games/en/">Games</a><a href="https://fcarvalhodev.github.io/rota-do-contracheque/en/">Paycheck</a><a href="https://fcarvalhodev.github.io/rota-palantir/en/">Palantir</a><a class="rb-lang" href="../jogo.html" hreflang="pt-BR" lang="pt-BR">PT</a></div></nav>
+<main class="jg" id="jg" aria-live="polite"><noscript>This game needs JavaScript. <a href="index.html">Read the route</a>.</noscript></main>
+<script>
+window.JG_DATA={
+ "kicker": "Rota do IBGE · game",
+ "title": "Interviewer for a Day",
+ "host": [
+  "📋",
+  "PNAD interviewer"
+ ],
+ "emo": "🏠",
+ "intro": "You knock on the door with the IBGE clipboard. Each resident tells you about their week. Classify them by the rule, the same since 2012. Then check the rumours about unemployment.",
+ "rounds": [
+  {
+   "type": "escolha",
+   "title": "Door to door",
+   "how": "classify each person as working, unemployed or outside the labour force.",
+   "n": 6,
+   "items": [
+    {
+     "q": "Zé, 52, did odd jobs as a bricklayer on two afternoons this week.",
+     "o": [
+      "Working",
+      "Unemployed",
+      "Outside the labour force"
+     ],
+     "a": 0,
+     "e": "He worked at least 1 hour for money: he counts as working, with or without a formal contract.",
+     "s": [
+      [
+       "IBGE Educa: inside unemployment",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "Ana, 23, a student, sent CVs this month and can start tomorrow.",
+     "o": [
+      "Working",
+      "Unemployed",
+      "Outside the labour force"
+     ],
+     "a": 1,
+     "e": "She looked for work in the last 30 days and could start: she is unemployed, even as a student.",
+     "s": [
+      [
+       "IBGE Educa: inside unemployment",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "Lúcia, 68, retired, neither works nor looks for work.",
+     "o": [
+      "Working",
+      "Unemployed",
+      "Outside the labour force"
+     ],
+     "a": 2,
+     "e": "She neither worked nor looked: she is outside the labour force and not in the unemployment rate.",
+     "s": [
+      [
+       "IBGE Educa: inside unemployment",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "Carlos, a ride-hailing driver, drove just 3 hours this week.",
+     "o": [
+      "Working",
+      "Unemployed",
+      "Outside the labour force"
+     ],
+     "a": 0,
+     "e": "One hour is enough. Odd jobs and apps count as work.",
+     "s": [
+      [
+       "IBGE Educa: inside unemployment",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "Bia receives Bolsa Família and spent the week looking for a job. She can start now.",
+     "o": [
+      "Working",
+      "Unemployed",
+      "Outside the labour force"
+     ],
+     "a": 1,
+     "e": "Receiving Bolsa Família changes nothing: she looked and is available, so she is unemployed.",
+     "s": [
+      [
+       "IBGE Educa: inside unemployment",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "Rafael gave up looking for work three months ago.",
+     "o": [
+      "Working",
+      "Unemployed",
+      "Outside the labour force"
+     ],
+     "a": 2,
+     "e": "Someone who gave up looking is outside the labour force. IBGE measures this group separately, as discouraged.",
+     "s": [
+      [
+       "IBGE Educa: inside unemployment",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "Marta helped for 2 hours at the family pastry stall, unpaid.",
+     "o": [
+      "Working",
+      "Unemployed",
+      "Outside the labour force"
+     ],
+     "a": 0,
+     "e": "Helping a family member at work also counts, even without pay.",
+     "s": [
+      [
+       "IBGE Educa: inside unemployment",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "João is on medical leave from his formal job.",
+     "o": [
+      "Working",
+      "Unemployed",
+      "Outside the labour force"
+     ],
+     "a": 0,
+     "e": "Someone temporarily away from a job counts as working.",
+     "s": [
+      [
+       "IBGE Educa: inside unemployment",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    },
+    {
+     "q": "Pedro, 30, looks after his children at home and is not looking for work.",
+     "o": [
+      "Working",
+      "Unemployed",
+      "Outside the labour force"
+     ],
+     "a": 2,
+     "e": "He did not work for income or look for work: outside the labour force.",
+     "s": [
+      [
+       "IBGE Educa: inside unemployment",
+       "https://educa.ibge.gov.br/jovens/materias-especiais/23208-por-dentro-do-desemprego.html"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "type": "boato",
+   "title": "Rumours about unemployment",
+   "how": "read the claim going around and say whether it is True, Half true, False or No proof.",
+   "n": 4,
+   "items": [
+    {
+     "c": "People who receive Bolsa Família count as employed.",
+     "v": "f",
+     "e": "IBGE does not use the benefit to decide anything. Someone who receives it and does not work, but is looking, counts as unemployed.",
+     "s": []
+    },
+    {
+     "c": "Someone who did a 1-hour odd job counts as working.",
+     "v": "v",
+     "e": "It is the International Labour Organization's rule, used worldwide and by IBGE since 2012, under every government. That is why IBGE also publishes how many wanted to work more.",
+     "s": []
+    },
+    {
+     "c": "People who gave up looking are not in the rate.",
+     "v": "v",
+     "e": "True, but IBGE counts them separately, and their number has also fallen.",
+     "s": []
+    },
+    {
+     "c": "IBGE changed the formula to help Lula.",
+     "v": "f",
+     "e": "The rules have been the same since 2012. In 2025 IBGE only updated the population size with the 2022 Census and recalculated every past year, including those of previous governments.",
+     "s": []
+    },
+    {
+     "c": "The drop is only an effect of the new calculation.",
+     "v": "m",
+     "e": "One columnist points out that the 2025 update helped lower the rate that quarter. But other figures, such as record numbers of people working and of formal jobs, show that employment really grew.",
+     "s": []
+    },
+    {
+     "c": "IBGE lies about unemployment.",
+     "v": "f",
+     "e": "Bolsonaro said this in 2024. But the method is the same one used under his government, when unemployment fell from 14.9% to 7.9%.",
+     "s": []
+    }
+   ]
+  }
+ ],
+ "ranks": [
+  [
+   0,
+   "Clipboard lost on the bus."
+  ],
+  [
+   40,
+   "Interviewer in training."
+  ],
+  [
+   65,
+   "Career interviewer."
+  ],
+  [
+   90,
+   "International methodology in your veins."
+  ]
+ ],
+ "quips": {
+  "ok": [
+   "Right! Go ahead and publish.",
+   "Spot on. The source thanks you.",
+   "Correct. The family group chat will have to swallow it.",
+   "Nice! Old-school fact-checker."
+  ],
+  "no": [
+   "Wrong. But at least you did not share it.",
+   "Close. Read the explanation before forwarding it.",
+   "Not this time. It happens to journalists too.",
+   "Oops. The group-chat aunt won this one."
+  ]
+ },
+ "full": "index.html",
+ "updated": "Rotas · Rota do IBGE"
+};
+</script>
+<script src="https://fcarvalhodev.github.io/rotas/jogos/jogo.js"></script>
+</body></html>
